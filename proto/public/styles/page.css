@@ -1,0 +1,117 @@
+/* Main styles for all pages - Using design tokens */
+
+ body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    background-color: var(--color-background-page);
+    color: var(--color-text);
+    line-height: var(--line-height-normal);
+    margin: 0;
+    padding: var(--spacing-md);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+  }
+  
+  header {
+    background-color: var(--color-background-header);
+    color: var(--color-text-inverted);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+  }
+  
+  footer {
+    background-color: var(--color-background-footer);
+    color: var(--color-text-inverted);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    text-align: center;
+    border-radius: var(--border-radius-md);
+  }
+  
+  /* Typography */
+  h1, h2, h3 {
+    color: var(--color-text-heading);
+    font-family: var(--font-family-heading);
+    line-height: var(--line-height-tight);
+  }
+  
+  h1 {
+    font-size: var(--font-size-xxlarge);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  h2 {
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-semibold);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  h3 {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-semibold);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  header h1 {
+    color: var(--color-text-inverted);
+    margin: 0;
+  }
+  
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+  }
+  
+  /* Navigation */
+  nav {
+    margin-top: var(--spacing-sm);
+  }
+  
+  nav a {
+    color: var(--color-link-inverted);
+  }
+  
+  /* Main content */
+  main {
+    background-color: var(--color-background-card);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+  }
+  
+  section {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  /* Lists */
+  ul {
+    padding-left: var(--spacing-xl);
+  }
+  
+  li {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  /* Special elements */
+  article {
+    border-left: var(--border-width-thick) solid var(--color-border-accent);
+    padding-left: var(--spacing-md);
+  }
+  
+  strong {
+    color: var(--color-text-heading);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  p {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
