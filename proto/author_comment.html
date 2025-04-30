@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Notes: F. Scott Fitzgerald</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <style>
+        /* Dark Mode Switch Styles */
+        .dark-mode-switch {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        
+        .dark-mode-switch label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--color-text-inverted);
+        }
+        
+        .dark-mode-switch input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        
+        .user-controls {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <svg class="icon">
+                <use href="/icons/book-categories.svg#icon-book" />
+            </svg>
+            <h1>My Book Collection</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">All Books</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="authors.html">Authors</a></li>
+            </ul>
+        </nav>
+        <div class="user-controls">
+            <label class="dark-mode-switch">
+                <input type="checkbox" id="darkModeToggle" autocomplete="off">
+                Dark Mode
+            </label>
+            <div class="user-profile">
+                <span class="username">John Doe</span>
+                <div class="avatar">JD</div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="page-header">
+            <h2>Literary Style Notes - F. Scott Fitzgerald</h2>
+            <nav class="breadcrumb">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="author.html">F. Scott Fitzgerald</a></li>
+                    <li>Author Notes</li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="content-grid">
+            <div class="main-content">
+                <article class="content-card">
+                    <h3>Writing Style Observations</h3>
+                    <div class="note-content">
+                        <p>
+                            F. Scott Fitzgerald's writing style is characterized by its rich, lyrical prose and its 
+                            emphasis on themes of aspiration and disillusionment. He masterfully uses symbolism to 
+                            convey deeper meanings, particularly in The Great Gatsby where symbols like the green light 
+                            and the eyes of Doctor T.J. Eckleburg take on significant importance.
+                        </p>
+                        <p>
+                            His works often explore the Jazz Age and the American Dream, with a focus on wealth, 
+                            class divisions, and moral emptiness beneath glamorous exteriors.
+                        </p>
+                        <p>
+                            Literary achievements include being considered one of the greatest American writers of the 
+                            20th century, with The Great Gatsby recognized as his masterpiece.
+                        </p>
+                        
+                        <div class="literary-features">
+                            <h4>Key Elements of Fitzgerald's Style</h4>
+                            <ul>
+                                <li>Rich, poetic language and description</li>
+                                <li>Heavy use of symbolism and metaphor</li>
+                                <li>Exploration of the American Dream</li>
+                                <li>Themes of wealth, class, and disillusionment</li>
+                                <li>Romantic yet critical portrayal of the Jazz Age</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <aside class="sidebar">
+                <section class="sidebar-card">
+                    <h3>Author Information</h3>
+                    <div class="mini-author-card">
+                        <div class="mini-author-photo"></div>
+                        <div class="mini-author-info">
+                            <h4><a href="author.html">F. Scott Fitzgerald</a></h4>
+                            <p>American Novelist</p>
+                        </div>
+                    </div>
+                    <ul class="author-actions">
+                        <li><a href="author.html" class="btn secondary">View Author Profile</a></li>
+                    </ul>
+                </section>
+                
+                <section class="sidebar-card">
+                    <h3>Related Books</h3>
+                    <ul class="book-list-small">
+                        <li><a href="book.html">The Great Gatsby</a></li>
+                        <li><a href="book2.html">Tender Is the Night</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>My Book Collection - Created for CSC437</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
