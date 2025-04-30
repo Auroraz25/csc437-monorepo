@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author: F. Scott Fitzgerald</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <style>
+        /* Dark Mode Switch Styles */
+        .dark-mode-switch {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        
+        .dark-mode-switch label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--color-text-inverted);
+        }
+        
+        .dark-mode-switch input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        
+        .user-controls {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import { setupDarkMode } from '/scripts/darkMode.js';
+        document.addEventListener('DOMContentLoaded', setupDarkMode);
+    </script>
+    <script type="module">
+        import { setupDarkMode } from '/scripts/darkMode.js';
+        document.addEventListener('DOMContentLoaded', setupDarkMode);
+    </script>
+    <header>
+        <div class="logo">
+            <svg class="icon">
+                <use href="/icons/book-categories.svg#icon-book" />
+            </svg>
+            <h1>My Book Collection</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">All Books</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="authors.html">Authors</a></li>
+            </ul>
+        </nav>
+        <div class="user-controls">
+            <label class="dark-mode-switch">
+                <input type="checkbox" id="darkModeToggle" autocomplete="off">
+                Dark Mode
+            </label>
+            <div class="user-profile">
+                <span class="username">John Doe</span>
+                <div class="avatar">JD</div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="page-header">
+            <h2>
+                <svg class="icon">
+                    <use href="/icons/book-categories.svg#icon-author" />
+                </svg>
+                F. Scott Fitzgerald
+            </h2>
+            <nav class="breadcrumb">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="authors.html">Authors</a></li>
+                    <li>F. Scott Fitzgerald</li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="content-grid">
+            <div class="main-content">
+                <section class="content-card author-profile">
+                    <div class="author-header">
+                        <div class="author-photo"></div>
+                        <div class="author-info">
+                            <h3>Author Details</h3>
+                            <p><strong>Name:</strong> F. Scott Fitzgerald</p>
+                            <p><strong>Nationality:</strong> American</p>
+                            <p><strong>Birth Year:</strong> 1896</p>
+                            <p><strong>Death Year:</strong> 1940</p>
+                        </div>
+                    </div>
+                    <div class="author-bio">
+                        <p>Francis Scott Key Fitzgerald was an American novelist, essayist, and short story writer. He was best known for his novels depicting the flamboyance and excess of the Jazz Age—a term he popularized.</p>
+                        <p>During his lifetime, he published four novels, four story collections, and 164 short stories. Although he achieved temporary popular success and fortune in the 1920s, Fitzgerald received critical acclaim only after his death, and is now widely regarded as one of the greatest American writers of the 20th century.</p>
+                    </div>
+                </section>
+                
+                <section class="content-card">
+                    <h3>Books by this Author</h3>
+                    <div class="books-list">
+                        <div class="book-card">
+                            <div class="book-cover"></div>
+                            <h4><a href="book.html">The Great Gatsby</a></h4>
+                            <p class="book-status read">Read</p>
+                        </div>
+                        <div class="book-card">
+                            <div class="book-cover"></div>
+                            <h4><a href="book2.html">Tender Is the Night</a></h4>
+                            <p class="book-status reading">Currently Reading</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <aside class="sidebar">
+                <section class="sidebar-card">
+                    <h3>Author Notes</h3>
+                    <ul class="notes-list">
+                        <li><a href="author_comment.html">Literary Style Notes</a></li>
+                    </ul>
+                </section>
+                
+                <section class="sidebar-card">
+                    <h3>Related Authors</h3>
+                    <ul class="author-list">
+                        <li><a href="author2.html">Harper Lee</a></li>
+                        <li><a href="author3.html">Ernest Hemingway</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>My Book Collection - Created for CSC437</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
