@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book: The Great Gatsby</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <style>
+        /* Dark Mode Switch Styles */
+        .dark-mode-switch {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        
+        .dark-mode-switch label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--color-text-inverted);
+        }
+        
+        .dark-mode-switch input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        
+        .user-controls {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <!-- Web Component Registration -->
+    <script type="module">
+        import { MiniBookElement } from '/src/mini-book.js';
+        import { setupDarkModeForComponents } from '/src/darkModeUtils.js';
+        
+        // Register the custom element
+        customElements.define('mini-book', MiniBookElement);
+        
+        // Setup the dark mode functionality when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            setupDarkModeForComponents();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <svg class="icon">
+                <use href="/icons/book-categories.svg#icon-book" />
+            </svg>
+            <h1>My Book Collection</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">All Books</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="authors.html">Authors</a></li>
+            </ul>
+        </nav>
+        <div class="user-controls">
+            <label class="dark-mode-switch">
+                <input type="checkbox" id="darkModeToggle" autocomplete="off">
+                Dark Mode
+            </label>
+            <div class="user-profile">
+                <span class="username">John Doe</span>
+                <div class="avatar">JD</div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="page-header">
+            <h2>The Great Gatsby</h2>
+            <nav class="breadcrumb">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li>The Great Gatsby</li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="book-detail-grid">
+            <div class="book-cover-section">
+                <div class="book-cover large"></div>
+                <div class="book-actions">
+                    <button class="btn primary">Update Status</button>
+                    <button class="btn secondary">Add to List</button>
+                </div>
+            </div>
+            
+            <div class="book-info-section">
+                <h3 class="book-title">The Great Gatsby</h3>
+                <p class="book-author">By <a href="author.html">F. Scott Fitzgerald</a></p>
+                <div class="book-metadata">
+                    <div class="metadata-item">
+                        <span class="label">Published:</span>
+                        <span class="value">1925</span>
+                    </div>
+                    <div class="metadata-item">
+                        <span class="label">Pages:</span>
+                        <span class="value">180</span>
+                    </div>
+                    <div class="metadata-item">
+                        <span class="label">ISBN:</span>
+                        <span class="value">978-0743273565</span>
+                    </div>
+                    <div class="metadata-item">
+                        <span class="label">Category:</span>
+                        <span class="value"><a href="category.html">Fiction</a></span>
+                    </div>
+                    <div class="metadata-item">
+                        <span class="label">Status:</span>
+                        <span class="value status-read">Read</span>
+                    </div>
+                </div>
+                
+                <div class="book-description">
+                    <h4>Description</h4>
+                    <p>The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.</p>
+                    <p>The novel was inspired by a youthful romance Fitzgerald had with socialite Ginevra King, and the riotous parties he attended on Long Island's North Shore in 1922. Following a move to the French Riviera, Fitzgerald completed a rough draft of the novel in 1924. He submitted it to editor Maxwell Perkins, who persuaded Fitzgerald to revise the work over the following winter.</p>
+                </div>
+            </div>
+            
+            <aside class="book-sidebar">
+                <section class="sidebar-card">
+                    <h4>Related Information</h4>
+                    <ul class="related-links">
+                        <li><a href="author.html">Author: F. Scott Fitzgerald</a></li>
+                        <li><a href="category.html">Category: Fiction</a></li>
+                        <li><a href="status.html">Status: Read</a></li>
+                    </ul>
+                </section>
+                
+                <section class="sidebar-card">
+                    <h4>My Comments</h4>
+                    <ul class="comment-list">
+                        <li><a href="comment.html">My review of The Great Gatsby</a></li>
+                    </ul>
+                </section>
+                
+                <section class="sidebar-card">
+                    <h4>Similar Books</h4>
+                    <div class="mini-book-list">
+                        <!-- Using the mini-book web component instead of div -->
+                        <mini-book href="book2.html" author="F. Scott Fitzgerald">Tender Is the Night</mini-book>
+                        <mini-book href="book3.html" author="Harper Lee">To Kill a Mockingbird</mini-book>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>My Book Collection - Created for CSC437</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

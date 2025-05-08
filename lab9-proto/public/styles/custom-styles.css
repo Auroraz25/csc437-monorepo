@@ -1,0 +1,26 @@
+.books-list {
+    width: 100%;
+  }
+  
+  book-list {
+    width: 100%; 
+    display: block;
+  }
+  
+  @media (min-width: 1400px) {
+    .books-list book-list .book-list-container {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .books-list book-list .book-list-container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .books-list book-list .book-list-container {
+      grid-template-columns: 1fr;
+    }
+  }

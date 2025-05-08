@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category: Fiction</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <style>
+        /* Dark Mode Switch Styles */
+        .dark-mode-switch {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        
+        .dark-mode-switch label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--color-text-inverted);
+        }
+        
+        .dark-mode-switch input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        
+        .user-controls {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import { setupDarkModeForComponents } from '/src/darkModeUtils.js';
+        
+        // Setup the dark mode functionality when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            setupDarkModeForComponents();
+        });
+    </script>
+    
+    
+    <header>
+        <div class="logo">
+            <svg class="icon">
+                <use href="/icons/book-categories.svg#icon-book" />
+            </svg>
+            <h1>My Book Collection</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">All Books</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="authors.html">Authors</a></li>
+            </ul>
+        </nav>
+        <div class="user-controls">
+            <label class="dark-mode-switch">
+                <input type="checkbox" id="darkModeToggle" autocomplete="off">
+                Dark Mode
+            </label>
+            <div class="user-profile">
+                <span class="username">John Doe</span>
+                <div class="avatar">JD</div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="page-header">
+            <h2>
+                <svg class="icon">
+                    <use href="/icons/book-categories.svg#icon-fiction" />
+                </svg>
+                Category: Fiction
+            </h2>
+            <nav class="breadcrumb">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li>Fiction</li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="content-grid">
+            <div class="main-content">
+                <section class="content-card">
+                    <h3>About this Category</h3>
+                    <p>Fiction books are literary works created from the imagination, not presented as fact. Fiction can be in any form, such as a novel, novella, short story, or play, and the imagination of its creators drives the story. It's often categorized by genre, such as mystery, romance, or fantasy.</p>
+                    <p>Fiction works may be partly based on factual occurrences, but always contain some imaginary content.</p>
+                </section>
+                
+                <section class="content-card category-icon">
+                    <h3>
+                        <svg class="icon">
+                            <use href="/icons/book-categories.svg#icon-fiction" />
+                        </svg>
+                        Books in this Category
+                    </h3>
+                    <div class="books-list">
+                        <div class="book-card">
+                            <div class="book-cover"></div>
+                            <h4><a href="book.html">The Great Gatsby</a></h4>
+                            <p class="book-author">F. Scott Fitzgerald</p>
+                            <p class="book-status read">Read</p>
+                        </div>
+                        <div class="book-card">
+                            <div class="book-cover"></div>
+                            <h4><a href="book2.html">Tender Is the Night</a></h4>
+                            <p class="book-author">F. Scott Fitzgerald</p>
+                            <p class="book-status reading">Currently Reading</p>
+                        </div>
+                        <div class="book-card">
+                            <div class="book-cover"></div>
+                            <h4><a href="book3.html">To Kill a Mockingbird</a></h4>
+                            <p class="book-author">Harper Lee</p>
+                            <p class="book-status read">Read</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <aside class="sidebar">
+                <section class="sidebar-card">
+                    <h3>Other Categories</h3>
+                    <ul class="category-list">
+                        <li><a href="category2.html">History</a></li>
+                        <li><a href="category3.html">Science</a></li>
+                    </ul>
+                </section>
+                
+                <section class="sidebar-card">
+                    <h3>Popular Authors</h3>
+                    <ul class="author-list">
+                        <li><a href="author.html">F. Scott Fitzgerald</a></li>
+                        <li><a href="author2.html">Harper Lee</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>My Book Collection - Created for CSC437</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
