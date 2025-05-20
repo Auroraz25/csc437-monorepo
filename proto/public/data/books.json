@@ -1,0 +1,39 @@
+{
+    "books": [
+      {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "href": "book.html",
+        "status": "read",
+        "coverUrl": "/images/covers/great-gatsby.jpg"
+      },
+      {
+        "title": "Tender Is the Night",
+        "author": "F. Scott Fitzgerald",
+        "href": "book2.html",
+        "status": "reading",
+        "coverUrl": "/images/covers/tender-is-the-night.jpg"
+      },
+      {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "href": "book3.html",
+        "status": "to-read",
+        "coverUrl": "/images/covers/to-kill-a-mockingbird.jpg"
+      },
+      {
+        "title": "1984",
+        "author": "George Orwell",
+        "href": "book4.html",
+        "status": "to-read",
+        "coverUrl": "/images/covers/1984.jpg"
+      },
+      {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "href": "book5.html",
+        "status": "read",
+        "coverUrl": "/images/covers/pride-and-prejudice.jpg"
+      }
+    ]
+}

@@ -14,6 +14,9 @@ export class MiniBookElement extends LitElement {
   @property({ type: Boolean, attribute: 'show-status' })
   showStatus = false;
   
+  @property()
+  coverUrl?: string;
+  
   @property({ type: Boolean })
   darkMode = false;
   
@@ -33,14 +36,14 @@ export class MiniBookElement extends LitElement {
   render() {
     return html`
       <div class="mini-book-card ${this.darkMode ? 'dark-mode' : ''}">
-        <div class="mini-book-cover"></div>
+        <div class="mini-book-cover" style="${this.coverUrl ? `background-image: url(${this.coverUrl}); background-size: cover; background-position: center;` : ''}"></div>
         <div class="mini-book-info">
           <h5><a href="${this.href}"><slot>Book Title</slot></a></h5>
-          <p>${this.author}</p>
-          ${this.showStatus && this.bookStatus ? html`
-            <p class="book-status ${this.bookStatus}">${this.getStatusText()}</p>
-          ` : ''}
+          <p class="book-author">${this.author}</p>
         </div>
+        ${this.showStatus && this.bookStatus ? html`
+          <p class="book-status ${this.bookStatus}">${this.getStatusText()}</p>
+        ` : ''}
       </div>
     `;
   }
@@ -62,21 +65,25 @@ export class MiniBookElement extends LitElement {
     
     .mini-book-card {
       display: flex;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #ddd;
-      background-color: white;
-      padding: 0.5rem;
-      border-radius: 0.25rem;
+      flex-direction: column;
+      padding: var(--spacing-md, 1rem);
+      background-color: var(--color-background-card, white);
+      border-radius: var(--border-radius-md, 0.5rem);
+      box-shadow: var(--shadow-light, 0 2px 4px rgba(0,0,0,0.1));
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      height: 100%;
+    }
+    
+    .mini-book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-medium, 0 4px 8px rgba(0,0,0,0.15));
     }
     
     .mini-book-cover {
-      width: 60px;
-      height: 80px;
-      background-color: #a3cceb;
-      border-radius: 0.25rem;
-      flex-shrink: 0;
+      height: 200px;
+      background-color: var(--color-accent-light, #a3cceb);
+      margin-bottom: var(--spacing-sm, 0.5rem);
+      border-radius: var(--border-radius-sm, 0.25rem);
     }
     
     .mini-book-info {
@@ -86,34 +93,33 @@ export class MiniBookElement extends LitElement {
     }
     
     h5 {
-      margin: 0 0 0.25rem 0;
-      font-size: 1.125rem;
-      font-weight: 600;
+      margin: 0 0 var(--spacing-xs, 0.25rem) 0;
+      font-size: var(--font-size-medium, 1.125rem);
+      font-weight: var(--font-weight-semibold, 600);
     }
     
     p {
       margin: 0;
-      font-size: 0.875rem;
-      color: #666;
+      font-size: var(--font-size-small, 0.875rem);
+      color: var(--color-text-light, #666);
     }
     
     a {
-      color: #3498db;
+      color: var(--color-accent, #3498db);
       text-decoration: none;
     }
     
     a:hover {
-      color: #2980b9;
+      color: var(--color-accent-dark, #2980b9);
       text-decoration: underline;
     }
     
     .book-status {
-      display: inline-block;
-      margin-top: 0.25rem;
-      padding: 0.125rem 0.25rem;
-      border-radius: 0.25rem;
-      font-size: 0.875rem;
-      width: fit-content;
+      margin-top: auto;
+      padding: var(--spacing-xs, 0.25rem) var(--spacing-sm, 0.5rem);
+      border-radius: var(--border-radius-sm, 0.25rem);
+      font-size: var(--font-size-small, 0.875rem);
+      text-align: center;
     }
     
     .read {
@@ -165,3 +171,5 @@ export class MiniBookElement extends LitElement {
     }
   `;
 }
+
+customElements.define('mini-book-element', MiniBookElement);
