@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - My Book Collection</title>
+  <script type="module">
+    import { define, Auth } from "@calpoly/mustang";
+    import { LoginFormElement } from "/src/auth/login-form.js";
+
+    define({
+      "mu-auth": Auth.Provider,
+      "login-form": LoginFormElement
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f0;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .logo h1 {
+      margin: 0;
+      color: #2c3e50;
+      font-family: 'Libre Baskerville', serif;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 15px;
+    }
+    label span {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    p {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .error {
+      color: #f44336;
+      margin-top: 10px;
+    }
+    .back-link {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .back-link a {
+      color: #3498db;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="page">
+  <div class="header">
+    <div class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+      </svg>
+      <h1>My Book Collection</h1>
+    </div>
+    <div class="back-link">
+      <a href="/app">← Back to Home</a>
+    </div>
+  </div>
+
+  <mu-auth>
+    <main class="card">
+      <h2>Create New Account</h2>
+      <login-form api="/auth/register" redirect="/app">
+        <label>
+          <span>Username:</span>
+          <input name="username" autocomplete="off" />
+        </label>
+        <label>
+          <span>Password:</span>
+          <input type="password" name="password" />
+        </label>
+      </login-form>
+    </main>
+    <p>Already have an account? <a href="/login.html">Log in</a></p>
+  </mu-auth>
+</body>
+</html>
